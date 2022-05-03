@@ -7,6 +7,8 @@ import pandas as pd
 with open('./approvedListings.json', 'r') as f:
     approvedListings = json.load(f)
 
+    
+
 def updateOSPrices(approvedListings):
 
     priceLog = []
@@ -14,24 +16,26 @@ def updateOSPrices(approvedListings):
     for entry in approvedListings:
         slug = entry['slug']
         name = entry['assetName']
+        
         url = 'https://api.opensea.io/api/v1/collection/'
 
-        response = requests.get(url + slug)
-        data = response.json()
-
         try:
+            response = requests.get(url + slug)
+            data = response.json()
+
             floor_price = data['collection']['stats']['floor_price']
             entry['osPrice'] = floor_price
             priceDict = {
-                "name": entry['assetName'], 
+                "name": name, 
                 "price": floor_price
                 }
             priceLog.append(priceDict)
             time.sleep(0.26)
         except:
-            print("Error with " + name)
-            pass
-    
+            print('Error with ' + slug)
+            continue
+
+
     feed = pd.DataFrame(priceLog)
     print(feed)
     

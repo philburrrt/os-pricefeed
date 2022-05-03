@@ -48,6 +48,10 @@
         "slug": "otherdeed"
     },
     {
+        "assetName": "Ragnarok Meta",
+        "slug": "ragnarok-meta"
+    },
+    {
         "assetName": "Archetype",
         "slug": "archetype-by-kjetil-golid"
     },
@@ -56,8 +60,11 @@
         "slug": "anticyclone-by-william-mapan"
     },
     {
-        "assetName": "Ragnarok Meta",
-        "slug": "ragnarok-meta"
+        "assetName": "Edifice",
+        "slug": "edifice-by-ben-kovach"
+    },
+    {
+        "assetName": "Screens",
+        "slug": "screens-by-thomas-lin-pedersen"
     }
-
 ]
