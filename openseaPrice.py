@@ -1,7 +1,8 @@
 import requests
 import json
-import pprint
 import time
+import pandas as pd
+
 
 with open('./approvedListings.json', 'r') as f:
     approvedListings = json.load(f)
@@ -31,7 +32,8 @@ def updateOSPrices(approvedListings):
             print("Error with " + name)
             pass
     
-    pprint.pprint(priceLog)
+    feed = pd.DataFrame(priceLog)
+    print(feed)
     
 
 
