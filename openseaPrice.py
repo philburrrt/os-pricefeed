@@ -26,9 +26,9 @@ def updateOSPrices(approvedListings):
                 "price": floor_price
                 }
             priceLog.append(priceDict)
-            time.sleep(0.255)
+            time.sleep(0.26)
         except:
-            print("Error with " + name + " slug")
+            print("Error with " + name)
             pass
     
     pprint.pprint(priceLog)
